@@ -1,0 +1,82 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chat-dev-150925-authRole",
+      "UnauthRoleArn": "arn:aws:iam::933840230769:role/amplify-chat-dev-150925-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::933840230769:role/amplify-chat-dev-150925-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-chat-dev-150925-deployment",
+      "UnauthRoleName": "amplify-chat-dev-150925-unauthRole",
+      "StackName": "amplify-chat-dev-150925",
+      "StackId": "arn:aws:cloudformation:eu-central-1:933840230769:stack/amplify-chat-dev-150925/42c5ce80-4615-11ec-bf92-0a2927ec71e2",
+      "AmplifyAppId": "d29gllfx9ofeis"
+    }
+  },
+  "auth": {
+    "chat4934705f": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-chat-dev-150925-deployment/amplify-cfn-templates/auth/chat4934705f-cloudformation-template.json",
+        "logicalId": "authchat4934705f"
+      },
+      "lastPushTimeStamp": "2021-11-15T13:23:42.416Z",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::933840230769:role/sns4934705f150925-dev",
+        "UserPoolId": "eu-central-1_E8EYd3F0d",
+        "AppClientIDWeb": "573ja50gs07vliiv6lqs2qi9si",
+        "AppClientID": "79ovh13h78p7hjp6etbjktq6k5",
+        "IdentityPoolId": "eu-central-1:6b58c849-6268-46a5-86a7-3745b45dfb6f",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-central-1:933840230769:userpool/eu-central-1_E8EYd3F0d",
+        "IdentityPoolName": "chat4934705f_identitypool_4934705f__dev",
+        "UserPoolName": "chat4934705f_userpool_4934705f"
+      },
+      "lastPushDirHash": "A9MeFmI0ID/b3dgyaluS1k6dtnM="
+    }
+  },
+  "api": {
+    "chat": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authchat4934705f"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "6mfpoypcozaa5lmuyngjdl2ywu",
+        "GraphQLAPIEndpointOutput": "https://xwxa7tcpljgdreefxvcr2vw27q.appsync-api.eu-central-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-chat-dev-150925-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apichat"
+      },
+      "lastPushTimeStamp": "2021-11-15T13:23:42.416Z",
+      "lastPushDirHash": "xwi5nMqkxC82zZPxgD33jghkS7c="
+    }
+  }
+}
